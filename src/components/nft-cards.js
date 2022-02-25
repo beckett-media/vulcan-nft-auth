@@ -113,19 +113,40 @@ export const NftCards = () => {
                        {(() => {
                             if (nft.status==0) {
                             return (
-                                <Chip label="Non-existent" color="default" variant="outlined" />
+                                <Chip
+                                  label="Non-existent"
+                                  color="warning"
+                                  variant="outlined"
+                                  avatar={<Avatar alt="Natacha" src="/static/beckett/no-entry.png" />}
+                                />
                             )
                             } else if (nft.status==1) {
                             return (
-                                <Chip label="Authentic" color="info" variant="outlined" />
+                                <Chip
+                                  label="Beckett Verified Authentic"
+                                  color="success"
+                                  variant="filled"
+                                  style={{backgroundColor:'white'}}
+                                  avatar={<Avatar alt="Natacha" src="https://upload.wikimedia.org/wikipedia/en/e/e4/Beckett_media_logo.png" />}
+                                />
                             )
                             } else if (nft.status==2) {
                             return (
-                                <Chip label="Fake" color="error" variant="outlined" />
+                                <Chip
+                                  label="Fake"
+                                  color="error"
+                                  variant="outlined"
+                                  avatar={<Avatar alt="Natacha" src="/static/beckett/error-badge.png" />}
+                                />
                             )
                             }else if (nft.status==3) {
                                 return (
-                                    <Chip label="Burned" color="warning" variant="outlined" />
+                                    <Chip
+                                      label="Burned"
+                                      color="warning"
+                                      variant="outlined"
+                                      avatar={<Avatar alt="Natacha" src="/static/beckett/deleted-badge.png" />}
+                                    />
                                 )
                             }
                         })()}
@@ -151,25 +172,6 @@ export const NftCards = () => {
                     <Typography variant="h5">
                       {nft.collection}
                        <Box component="div" sx={{ display: 'inline', ml: 1}} >
-                       {(() => {
-                            if (nft.status==0) {
-                            return (
-                                <img src="/static/beckett/no-entry.png" height='20' width='20' />
-                            )
-                            } else if (nft.status==1) {
-                            return (
-                                <img src="/static/beckett/verified-badge.png" height='20' width='20' />
-                            )
-                            } else if (nft.status==2) {
-                            return (
-                                <img src="/static/beckett/error-badge.png" height='20' width='20' />
-                            )
-                            }else if (nft.status==3) {
-                                return (
-                                    <img src="/static/beckett/deleted-badge.png" height='20' width='20' />
-                                )
-                            }
-                        })()}
                             
                        </Box>
                        
